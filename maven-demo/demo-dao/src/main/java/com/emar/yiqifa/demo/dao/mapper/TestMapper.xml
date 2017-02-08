@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.emar.yiqifa.demo.dao.mapper.TestMapper">
+	<cache type="Xxx">
+		<property name="config" value=""/>
+	</cache>
+	<select id="getCampaign" resultType="com.emar.yiqifa.demo.dao.entity.Campaign">
+	<![CDATA[
+		select id,campaign_name as campaignName 
+		from campaign 
+		where id=#{id}
+	]]>
+	</select>
+	<update id="updateCampaign" parameterType="com.emar.yiqifa.demo.dao.entity.Campaign">
+	<![CDATA[
+		update campaign c 
+			set c.campaign_name=#{campaignName}
+		where c.id=#{id}  
+	]]>	
+	</update>
+</mapper>

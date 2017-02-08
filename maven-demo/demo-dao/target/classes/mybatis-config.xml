@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<properties>
+		<property name="dialect" value="mysql"/>
+	</properties>
+	<!--settings>
+		<setting name="cacheEnabled" value="false"/>
+	</settings -->
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC"></transactionManager>
+			<dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver" />
+                <property name="url" value="jdbc:mysql://221.122.127.93:3308/yiqifa_bs_88?useUnicode=true&amp;characterEncoding=utf-8&amp;autoReconnect=true&amp;useOldAliasMetadataBehavior=true" />
+                <property name="username" value="yiqifatest" />
+                <property name="password" value="yiqifatest" />
+            </dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<mapper resource="com/emar/yiqifa/demo/dao/mapper/TestMapper.xml"/>
+	</mappers>
+</configuration>
